@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/registration">
+
+    <fragment
+        android:id="@+id/registration"
+        android:name="com.geeks.nurkyz_chomoeva_hw4_1.fragment.Registration"
+        android:label="registration"
+        tools:layout="@layout/fragment_registration" >
+        <action
+            android:id="@+id/action_registration_to_detail"
+            app:destination="@id/details"
+            app:popUpTo="@id/registration"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/details"
+        android:name="com.geeks.nurkyz_chomoeva_hw4_1.fragment.Detail"
+        android:label="detail"
+        tools:layout="@layout/fragment_detail" >
+        <argument
+            android:name="user"
+            android:defaultValue="@null"
+            app:argType="com.geeks.nurkyz_chomoeva_hw4_1.data.User"
+            app:nullable="true"/>
+    </fragment>
+
+</navigation>
